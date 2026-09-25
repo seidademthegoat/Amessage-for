@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>To Nadiya | From Seid Adem</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap');
+:root{
+  --gold:#d5b06a;
+  --gold-light:#f1d99c;
+  --gold-deep:#b8924a;
+  --dark:#0b1019;
+  --dark-soft:#151b25;
+  --paper:#f6f0e4;
+  --paper-warm:#f1e9d8;
+  --ink:#29251f;
+  --muted:#aeb3bd;
+  --shadow-heavy:0 25px 60px rgba(0,0,0,0.45);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--dark);
+  color:white;
+  font-family:'Inter',sans-serif;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+
+/* ---------- HERO ---------- */
+.hero{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:40px 20px;
+  background:
+    radial-gradient(circle at 50% 25%, rgba(213,176,106,0.08) 0%, transparent 45%),
+    radial-gradient(circle at 80% 80%, rgba(213,176,106,0.04) 0%, transparent 50%),
+    linear-gradient(135deg,#090d15 0%,#172131 55%,#0e1520 100%);
+  position:relative;
+  overflow:hidden;
+}
+.hero::before{
+  content:"✦";
+  position:absolute;
+  top:40px;
+  left:50%;
+  transform:translateX(-50%);
+  color:var(--gold);
+  font-size:22px;
+  opacity:0.8;
+  animation:starPulse 4s ease-in-out infinite;
+}
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="3" stitchTiles="stitch"/></filter><rect width="200" height="200" filter="url(%23n)" opacity="0.025"/></svg>');
+  pointer-events:none;
+  z-index:0;
+}
+@keyframes starPulse{
+  0%,100%{opacity:0.4;transform:translateX(-50%) scale(1)}
+  50%{opacity:1;transform:translateX(-50%) scale(1.15)}
+}
+.hero-content{
+  max-width:850px;
+  width:100%;
+  text-align:center;
+  position:relative;
+  z-index:2;
+  animation:fadeUp 1.6s ease-out;
+}
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(30px)}
+  to{opacity:1;transform:translateY(0)}
+}
+.small-title{
+  color:var(--gold);
+  font-size:11px;
+  letter-spacing:6px;
+  text-transform:uppercase;
+  margin-bottom:28px;
+  font-weight:500;
+}
+h1,h2,h3{
+  font-family:'Cormorant Garamond',Georgia,serif;
+}
+h1{
+  font-size:clamp(56px,11vw,112px);
+  line-height:0.88;
+  font-weight:600;
+  margin:0;
+  color:var(--gold-light);
+  text-shadow:0 4px 30px rgba(213,176,106,0.15);
+  letter-spacing:-1px;
+}
+.hero p{
+  color:#d5d9e1;
+  font-family:'Cormorant Garamond',Georgia,serif;
+  font-size:25px;
+  margin:32px auto;
+  max-width:580px;
+  line-height:1.5;
+  font-weight:400;
+  font-style:italic;
+}
+.gold-line{
+  width:100px;
+  height:1px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+  margin:32px auto;
+  position:relative;
+}
+.gold-line::before{
+  content:"❦";
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  color:var(--gold);
+  font-size:18px;
+  background:transparent;
+  padding:0 10px;
+}
+.start-btn{
+  display:inline-block;
+  border:1px solid var(--gold);
+  color:var(--gold-light);
+  text-decoration:none;
+  padding:16px 38px;
+  letter-spacing:3px;
+  font-size:11px;
+  text-transform:uppercase;
+  transition:all 0.4s cubic-bezier(0.4,0,0.2,1);
+  position:relative;
+  overflow:hidden;
+  background:transparent;
+  font-weight:500;
+}
+.start-btn::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:var(--gold);
+  transform:scaleX(0);
+  transform-origin:left;
+  transition:transform 0.4s cubic-bezier(0.4,0,0.2,1);
+  z-index:-1;
+}
+.start-btn:hover{
+  color:var(--dark);
+  border-color:var(--gold);
+}
+.start-btn:hover::before{
+  transform:scaleX(1);
+}
+
+/* ---------- LETTER SECTION ---------- */
+.letter-section{
+  padding:90px 20px;
+  background:linear-gradient(180deg,#151b25 0%,#1a2130 50%,#151b25 100%);
+  position:relative;
+}
+.letter-section::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  height:1px;
+  background:linear-gradient(90deg,transparent,rgba(213,176,106,0.3),transparent);
+}
+.letter{
+  max-width:820px;
+  margin:auto;
+  background:var(--paper);
+  background-image:
+    linear-gradient(135deg,rgba(255,255,255,0.4) 0%,transparent 50%),
+    radial-gradient(circle at 100% 0%,rgba(213,176,106,0.06) 0%,transparent 40%);
+  color:var(--ink);
+  padding:clamp(30px,7vw,80px);
+  box-shadow:var(--shadow-heavy);
+  position:relative;
+  border-radius:1px;
+}
+.letter::before{
+  content:"";
+  position:absolute;
+  inset:14px;
+  border:1px solid rgba(188,166,117,0.5);
+  pointer-events:none;
+  border-radius:1px;
+}
+.letter::after{
+  content:"❦";
+  position:absolute;
+  bottom:20px;
+  right:28px;
+  font-size:22px;
+  color:rgba(139,108,53,0.35);
+  font-family:'Cormorant Garamond',serif;
+  transform:rotate(15deg);
+}
+.letter-content{
+  position:relative;
+  z-index:1;
+}
+.letter-label{
+  text-align:center;
+  font-size:10px;
+  letter-spacing:5px;
+  color:#8b6c35;
+  text-transform:uppercase;
+  font-weight:600;
+}
+.letter h2{
+  text-align:center;
+  font-size:clamp(38px,7vw,60px);
+  margin:18px 0 10px;
+  font-weight:600;
+  color:var(--ink);
+  letter-spacing:-0.5px;
+}
+.letter .date{
+  text-align:center;
+  font-size:11px;
+  color:#786f61;
+  margin-bottom:42px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+}
+.letter p{
+  font-family:'Cormorant Garamond',Georgia,serif;
+  font-size:21.5px;
+  line-height:1.68;
+  margin:0 0 22px;
+  color:#2e2a24;
+  font-weight:400;
+}
+.letter p:first-of-type{
+  font-size:24px;
+  color:#1f1c18;
+  font-weight:500;
+}
+.letter h3{
+  color:#715323;
+  font-size:30px;
+  margin-top:48px;
+  margin-bottom:14px;
+  font-weight:600;
+  letter-spacing:-0.3px;
+  position:relative;
+  padding-left:20px;
+}
+.letter h3::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:50%;
+  transform:translateY(-50%);
+  width:8px;
+  height:8px;
+  background:var(--gold-deep);
+  border-radius:50%;
+  opacity:0.7;
+}
+.highlight{
+  border-left:3px solid #c39b52;
+  padding:20px 24px;
+  background:linear-gradient(90deg,rgba(233,223,205,0.9),rgba(233,223,205,0.4));
+  margin:34px 0;
+  border-radius:0 4px 4px 0;
+  position:relative;
+}
+.highlight::before{
+  content:"“";
+  position:absolute;
+  top:-5px;
+  left:10px;
+  font-size:50px;
+  color:rgba(195,155,82,0.3);
+  font-family:'Cormorant Garamond',serif;
+  line-height:1;
+}
+.highlight p{
+  margin:0;
+  font-style:italic;
+  font-size:20px;
+  color:#4a3f2f;
+  padding-left:8px;
+}
+.signature{
+  margin-top:50px;
+  text-align:right;
+  border-top:1px dashed rgba(139,108,53,0.35);
+  padding-top:28px;
+}
+.signature strong{
+  font-family:'Cormorant Garamond',Georgia,serif;
+  font-size:32px;
+  font-weight:600;
+  color:#4a3a22;
+  display:block;
+}
+.signature small{
+  display:block;
+  color:#786f61;
+  margin-top:6px;
+  font-size:12px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+
+/* ---------- MUSIC SECTION ---------- */
+.music-section{
+  padding:70px 20px 60px;
+  text-align:center;
+  background:#0b1019;
+  position:relative;
+}
+.music-section::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:50%;
+  transform:translateX(-50%);
+  width:200px;
+  height:1px;
+  background:linear-gradient(90deg,transparent,rgba(213,176,106,0.4),transparent);
+}
+.music-box{
+  max-width:560px;
+  margin:auto;
+  border:1px solid rgba(74,64,48,0.7);
+  padding:36px 30px;
+  border-radius:2px;
+  background:rgba(21,27,37,0.5);
+  backdrop-filter:blur(4px);
+  transition:border-color 0.3s;
+}
+.music-box:hover{
+  border-color:rgba(213,176,106,0.4);
+}
+.music-box h3{
+  color:var(--gold-light);
+  font-size:32px;
+  margin:0 0 10px;
+  font-weight:600;
+  letter-spacing:-0.3px;
+}
+.music-box p{
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.7;
+  margin:0 0 20px;
+}
+.music-box p b{
+  color:var(--gold);
+  font-weight:600;
+}
+.music-box audio{
+  width:100%;
+  margin-top:8px;
+  border-radius:40px;
+  background:#1a2130;
+  height:40px;
+  filter:invert(0.85) sepia(0.3) hue-rotate(5deg) saturate(1.3);
+  outline:none;
+  box-shadow:0 4px 16px rgba(0,0,0,0.5);
+}
+.music-note{
+  color:var(--gold);
+  font-size:12px;
+  margin-top:18px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+
+/* ---------- FOOTER ---------- */
+footer{
+  text-align:center;
+  background:#080b11;
+  padding:40px 20px;
+  color:#9299a5;
+  font-size:12px;
+  letter-spacing:1px;
+  line-height:1.8;
+  border-top:1px solid rgba(213,176,106,0.08);
+}
+footer span{
+  color:var(--gold);
+  font-weight:500;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media(max-width:768px){
+  .hero{min-height:92vh;padding:30px 16px}
+  .hero p{font-size:21px;max-width:420px}
+  .letter-section{padding:50px 12px}
+  .letter{padding:38px 24px}
+  .letter::before{inset:8px}
+  .letter p{font-size:19.5px;line-height:1.62}
+  .letter p:first-of-type{font-size:21px}
+  .letter h3{font-size:26px;margin-top:38px;padding-left:16px}
+  .highlight{padding:16px 18px;margin:28px 0}
+  .highlight p{font-size:18px}
+  .signature strong{font-size:27px}
+  .music-box{padding:28px 20px}
+  .music-box h3{font-size:27px}
+}
+@media(max-width:420px){
+  h1{font-size:clamp(48px,13vw,72px)}
+  .hero p{font-size:19px;margin:24px auto}
+  .start-btn{padding:14px 28px;font-size:10px}
+  .letter{padding:30px 18px}
+  .letter p{font-size:18px;line-height:1.6}
+  .letter p:first-of-type{font-size:19.5px}
+  .letter h3{font-size:23px;padding-left:14px}
+  .letter h3::before{width:6px;height:6px}
+  .highlight{padding:14px 14px}
+  .highlight p{font-size:16.5px}
+  .signature strong{font-size:24px}
+  .signature small{font-size:10px}
+}
+</style>
+</head>
+<body>
+
+<!-- ========== HERO ========== -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="small-title">A letter from the heart</div>
+    <h1>Dear<br>Nadiya</h1>
+    <div class="gold-line"></div>
+    <p>Some feelings are too deep to explain face to face. So I decided to write them down.</p>
+    <a href="#letter" class="start-btn">Read my letter ↓</a>
+  </div>
+</section>
+
+<!-- ========== LETTER ========== -->
+<section class="letter-section" id="letter">
+  <article class="letter">
+    <div class="letter-content">
+      <div class="letter-label">To the person who matters to me</div>
+      <h2>Hello, My Life</h2>
+      <div class="date">From Seid Adem</div>
+
+      <p>Hello Nadiya, hello my life.</p>
+      <p>You came into my life like a random girl, but somehow you found your way into my heart. Since then, I have had so many feelings that sometimes I cannot find the words to explain them.</p>
+      <p>Do you know why I prefer writing this message instead of talking to you face to face? Because I become fearful in front of you. Even when I text you, my heart races so hard. And when I see you face to face, I forget everything I had planned to say.</p>
+      <p>I do not know why this happens. Maybe it is because you mean so much to me. I hope you can understand.</p>
+
+      
+      <p>Look at how the days have been going. Today is Friday, and we are seeing each other, but we are not saying much. I keep asking myself: is this really how things are supposed to be?</p>
+      <p>I am also a human being, Nadiya. I have feelings too. I care about you, but I do not know how to get closer when I am unsure about what you feel.</p>
+      <p>I called you two days ago, and we talked for a short time. I know you have your own life, your own schedule, and your own things to do. But I have been carrying these questions in my heart.</p>
+
+      <div class="highlight">
+        <p>I am not writing this to make you feel guilty. I am writing because I want us to understand each other honestly.</p>
+      </div>
+
+      <p>Nadiya, do you have feelings for me? Do you really love me, or have your feelings changed?</p>
+      <p>I want to understand where I stand in your life. I want to know whether you still want us to have a relationship, or whether you would prefer that we remain friends.</p>
+      <p>Whatever your answer is, I would rather hear the truth than continue wondering.</p>
+
+      <p>I have not forgotten our conversations. I have not forgotten the sweet words, the secrets we shared, and the promises we talked about.</p>
+      <p>I still remember when you asked me about the villain and the hero. I remember the summer when we spent so much time being happy together. Those were some of the happiest memories I have had.</p>
+      <p>I am so thankful that you trusted me. That trust meant a lot to me, and I will always appreciate the memories we made.</p>
+
+      <p>Then one day, you disappeared. You came back, and you had a schedule. I respected that. When the schedule did not work out, I stayed quiet because I did not want to pressure you.</p>
+      <p>Then you disappeared again. You came back on my birthday, and I was happy to hear from you. But after that, things became difficult for me to understand.</p>
+      <p>When you sent me this message:</p>
+
+      <div class="highlight">
+        <p>"Okay, this is serious. I care, but I don't want to continue this relationship in the way we've been doing. I need to keep my boundaries and focus on what is right. Please respect that."</p>
+      </div>
+
+      <p>I respected what you said, but I did not fully understand what you meant by "the way we've been doing."</p>
+      <p>I had been waiting to hear from you. I was checking for your messages and hoping we could talk. So when I received that message, I felt confused and hurt.</p>
+      <p>When I asked you at school, you said things were normal. But for me, they did not feel normal. I wanted to understand what had happened.</p>
+
+      <p>Nadiya, please help me understand. If I did something wrong, tell me. If I crossed a boundary, tell me. If there is something I need to learn, I want to understand it.</p>
+      <p>I am not saying I am perfect. I am only asking for an honest conversation. I do not want to blame you. I want to know what is true.</p>
+      <p>I called because I wanted us to talk. When we did not talk much, I started feeling like I was being ignored. I know that may not have been your intention, but that is how it felt to me.</p>
+
+      <p>I have not forgotten what I promised you. I have not forgotten what we shared. But I also understand that you have the right to your own feelings, your own boundaries, and your own choices.</p>
+      <p>I do not want you to feel forced to love me. I do not want you to answer because you feel guilty. I want you to be honest with me, even if the answer is difficult for me.</p>
+      <p>All I ask is that you read this carefully and tell me what you truly feel.</p>
+
+      <div class="highlight">
+        <p>I would rather have an honest answer than keep guessing what is in your heart.</p>
+      </div>
+
+      <p>Thank you for trusting me. Thank you for the memories. Thank you for the time we shared.</p>
+      <p>Whatever happens, I hope we can treat each other with kindness and respect. And also don't wait until i call you because it is your answer now</p>
+
+      <div class="signature">
+        <strong>Seid Adem</strong>
+        <small>The fearful one who finally found the words.</small>
+      </div>
+    </div>
+  </article>
+</section>
+
+
+<footer>
+  Made with honesty by <span>Seid Adem</span><br><br>
+  © 2026 — A letter from the heart
+</footer>
+
+</body>
+</html>
